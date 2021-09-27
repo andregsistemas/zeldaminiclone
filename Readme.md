@@ -12,3 +12,9 @@ Para mais info, ver comentários do código fonte.
 
 -Criação da classe de controle Player.java para criações de métodos de direção e colisões.
 -Realizada alteração no código fonte para adicionar movimentação de um render através da interface.
+
+27/09/2021 1.c
+
+-Criação da classe World e blocos
+-Criação de blocos com contornos na interface gráfica do jogo
+-Criado métodos de colisão do player para com os blocos.

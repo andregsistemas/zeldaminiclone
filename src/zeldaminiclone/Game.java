@@ -13,13 +13,15 @@ import javax.swing.JFrame;
 public class Game extends Canvas implements Runnable, KeyListener{
 	
 	public static int WIDTH = 480, HEIGHT = 480;
-	public Player player;
+	public Player player; //Instancia a classe Player
+	public World world; // Instancia a Classe World
+	
 	
 	public Game() {
 		this.addKeyListener(this); // adicionar eventos de teclado
 		this.setPreferredSize(new Dimension( WIDTH, HEIGHT ));
-		player = new Player(0,0);
-		
+		player = new Player(30,30);
+		world = new World();		
 	}
 	
 	public void tick() { //Método responsavel pela lógica do jogo, movimentação, colisões, etc.
@@ -39,6 +41,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		g.fillRect(0, 0, WIDTH, HEIGHT); //metodo para exibir um retângulo na tela
 		
 		player.render(g);
+		world.render(g);
 		
 		bs.show(); //Exibe na interface o retângulo
 	} 
