@@ -1,10 +1,10 @@
 Upload dos arquivos Java para o repositório GitHub
 
-Códicos da entrada de interface adicionado na classe  Game.java
+- Códicos da entrada de interface adicionado na classe  Game.java
 
 27/09/2021 1.a
 
-Atualização do código fonte da classe Game, onde foi adicionado métodos para exibir um retângulo vermelho em um fundo preto dentro interface grafica do JAVA.
+- Atualização do código fonte da classe Game, onde foi adicionado métodos para exibir um retângulo vermelho em um fundo preto dentro interface grafica do JAVA.
 
 Para mais info, ver comentários do código fonte.
 
@@ -33,3 +33,10 @@ Para mais info, ver comentários do código fonte.
 - Classe sprite atualizada para pegar mais sprites de movimentos da pasta res.
 - Retirados os metodos de criação de blocos do java para adicionar um sprite de tile(muro).
 - Alterado cor do plano de fundo do jogo de preto para verde.
+
+30/09/2021 1.f
+
+- Realizada a criação da classe Inimigo.java.
+- Criado metodos de controle da classe inimigo para renderiza-lo.
+- Criado spritesheet do inimigo.
+- Atualzado classe Spritesheet.java.

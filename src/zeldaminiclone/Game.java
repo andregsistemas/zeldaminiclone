@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 
@@ -15,6 +17,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	public static int WIDTH = 640, HEIGHT = 480; //Tamanho da janela ao iniciar o jogo
 	public static int SCALE = 3; //Redimensiona a janela
 	public Player player; //Instancia a classe Player
+	public List<Inimigo> inimigos = new ArrayList<Inimigo>();
 	public World world; // Instancia a Classe World
 	
 	
@@ -23,11 +26,17 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		this.setPreferredSize(new Dimension( WIDTH, HEIGHT ));
 		new Spritesheet(); // Inicia a sprite no jogo
 		player = new Player(30,30);
-		world = new World();		
+		world = new World();
+		inimigos.add(new Inimigo(32,32));
+		inimigos.add(new Inimigo(32,64));
 	}
 	
 	public void tick() { //Verifica colisão com o player e remove o bloco que foi colocado aleatorio
 		player.tick(); //invoca o metodo player.tick
+
+		for(int i = 0; i < inimigos.size(); i++){
+			inimigos.get(i).tick();
+		}
 	} 
 	
 	public void render() { // metodo para realizar a renderizacao do jogo.
@@ -42,8 +51,12 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		g.setColor(new Color(0, 135, 13)); // Metodo para preencher o backgroud com cor
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE); //metodo para exibir o backgroud na interface da tela.
 		
+		player.render(g); // renderiza o player
 		player.render(g);
-		world.render(g);
+		for(int i = 0; i < inimigos.size(); i++){ //renderiza os inimigos
+			inimigos.get(i).render(g);
+		}
+		world.render(g); //renderizao mapa
 		
 		bs.show(); //Exibe o conteudo do jogo dentro da interface grafica
 	} 
