@@ -12,7 +12,7 @@ public class Blocks extends Rectangle{
 	
 	public void render(Graphics g) {
 		// Renderiza Bloco na cor Mangenta
-		g.setColor(Color.MAGENTA);
+		g.setColor(Color.magenta);
 		g.fillRect(x, y, width, height);
 		
 		// Renderiza uma borda em preto no bloco mangenta

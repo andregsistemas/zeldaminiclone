@@ -18,3 +18,9 @@ Para mais info, ver comentários do código fonte.
 -Criação da classe World e blocos
 -Criação de blocos com contornos na interface gráfica do jogo
 -Criado métodos de colisão do player para com os blocos.
+
+29/09/2021
+
+- Realizada a criação da pasta "res"(Resources) dentro do projeto zeldaminiclone.
+- Realizado a criação da classe Spritesheet para executar os spintsheet(Imagens) do personagem Zelda do jogo.
+- Realizado a alteração da classe Game.java e Player.java para invocar a classe Sprintsheet

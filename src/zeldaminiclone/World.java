@@ -9,7 +9,7 @@ public class World {
 	
 	public static List<Blocks> blocos = new ArrayList<Blocks>();
 	
-	//Método para rederizar Mapa
+	//Mï¿½todo para rederizar Mapa
 	public World() {
 		for(int xx = 0; xx < 15; xx++) { //renderiza Blocos Superior
 			blocos.add(new Blocks(xx*32, 0));
@@ -24,7 +24,7 @@ public class World {
 			blocos.add(new Blocks(480-32, yy*32)); //Renderiza Blocos da Direita
 		}
 	}
-	// Metodo de Colisão
+	// Metodo de ColisÃ£o
 	public static boolean isFree(int x, int y) {
 		for(int i = 0; i < blocos.size(); i++) {
 			Blocks blocoAtual = blocos.get(i);

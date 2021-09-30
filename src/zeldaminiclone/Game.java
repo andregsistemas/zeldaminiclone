@@ -20,15 +20,16 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	public Game() {
 		this.addKeyListener(this); // adicionar eventos de teclado
 		this.setPreferredSize(new Dimension( WIDTH, HEIGHT ));
+		new Spritesheet(); // Inicia a sprite no jogo
 		player = new Player(30,30);
 		world = new World();		
 	}
 	
-	public void tick() { //Método responsavel pela lógica do jogo, movimentação, colisões, etc.
+	public void tick() { //Mï¿½todo responsavel pela lï¿½gica do jogo, movimentaï¿½ï¿½o, colisï¿½es, etc.
 		player.tick(); //invoca o metodo player.tick
 	} 
 	
-	public void render() { // método para realizar a renderização do jogo.
+	public void render() { // mï¿½todo para realizar a renderizaï¿½ï¿½o do jogo.
 		BufferStrategy bs = this.getBufferStrategy();
 		
 		if(bs == null) {
@@ -37,14 +38,15 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		}
 		
 		Graphics g = bs.getDrawGraphics();
-		g.setColor(Color.black); // Método para setar a cor
-		g.fillRect(0, 0, WIDTH, HEIGHT); //metodo para exibir um retângulo na tela
+		g.setColor(Color.black); // Mï¿½todo para setar a cor
+		g.fillRect(0, 0, WIDTH, HEIGHT); //metodo para exibir um retï¿½ngulo na tela
 		
 		player.render(g);
 		world.render(g);
 		
-		bs.show(); //Exibe na interface o retângulo
+		bs.show(); //Exibe na interface o retï¿½ngulo
 	} 
+	//Metodo contrutor da interface grafica
 	
 	public static void main (String[] args) {
 		Game game = new Game();

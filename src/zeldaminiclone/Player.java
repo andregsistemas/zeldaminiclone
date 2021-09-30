@@ -6,13 +6,13 @@ import java.awt.Rectangle;
 
 public class Player extends Rectangle{
 	
-	public int spd = 4; //spd = speed de velocidade de movimentação do Player pelo mapa
-	public boolean right, up, down, left; //Variáveis de controle do Player
+	public int spd = 4; //spd = speed de velocidade de movimentaï¿½ï¿½o do Player pelo mapa
+	public boolean right, up, down, left; //Variï¿½veis de controle do Player
 	
-	public Player(int x, int y) { //Método para movimentação do personagem na Interface di jogo.
+	public Player(int x, int y) { //Mï¿½todo para movimentaï¿½ï¿½o do personagem na Interface do jogo.
 		super(x, y, 32, 32); //largura e altura do player
 	}
-	public void tick() { //Método de controle do Player
+	public void tick() { //Mï¿½todo de controle do Player
 		if(right && World.isFree(x+spd, y)) {
 			x+=spd;
 		}else if(left&& World.isFree(x-spd, y)) {
@@ -28,8 +28,9 @@ public class Player extends Rectangle{
 	}
 	
 	public void render(Graphics g){
-		g.setColor(Color.blue);
-		g.fillRect(x, y, width, height);
+		//g.setColor(Color.blue);
+		//g.fillRect(x, y, width, height);
+		g.drawImage(Spritesheet.player_front, x, y, 32, 32, null);
 	}
 
 }
