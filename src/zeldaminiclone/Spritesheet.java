@@ -7,10 +7,10 @@ import javax.imageio.ImageIO;
 public class Spritesheet{
 
     public static BufferedImage spritesheet;
-
-    public static BufferedImage player_front;
+    public static BufferedImage[] player;
+    public static BufferedImage tilewall;
     
-    //Carregar spritesheet (Imagem em Sprites)
+    //Metodo para carregar spritesheet (Imagem em Sprites) da pasta res( Resources ).
     public Spritesheet(){
         try {
             spritesheet = ImageIO.read(getClass().getResource("/spritesheet.png"));
@@ -19,8 +19,10 @@ public class Spritesheet{
             e.printStackTrace();
         }
 
-        player_front = Spritesheet.getSprite(1, 11, 16, 15);
-
+        player = new BufferedImage[2];
+        player[0] = Spritesheet.getSprite(1, 11, 16, 16);
+        player[1] = Spritesheet.getSprite(19, 11, 16, 16);
+        tilewall = Spritesheet.getSprite(320, 185, 16, 16);
     }
 
     private static BufferedImage getSprite(int x, int y, int width, int height) {

@@ -12,7 +12,8 @@ import javax.swing.JFrame;
 
 public class Game extends Canvas implements Runnable, KeyListener{
 	
-	public static int WIDTH = 480, HEIGHT = 480;
+	public static int WIDTH = 640, HEIGHT = 480; //Tamanho da janela ao iniciar o jogo
+	public static int SCALE = 3; //Redimensiona a janela
 	public Player player; //Instancia a classe Player
 	public World world; // Instancia a Classe World
 	
@@ -25,11 +26,11 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		world = new World();		
 	}
 	
-	public void tick() { //M�todo responsavel pela l�gica do jogo, movimenta��o, colis�es, etc.
+	public void tick() { //Verifica colisão com o player e remove o bloco que foi colocado aleatorio
 		player.tick(); //invoca o metodo player.tick
 	} 
 	
-	public void render() { // m�todo para realizar a renderiza��o do jogo.
+	public void render() { // metodo para realizar a renderizacao do jogo.
 		BufferStrategy bs = this.getBufferStrategy();
 		
 		if(bs == null) {
@@ -38,13 +39,13 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		}
 		
 		Graphics g = bs.getDrawGraphics();
-		g.setColor(Color.black); // M�todo para setar a cor
-		g.fillRect(0, 0, WIDTH, HEIGHT); //metodo para exibir um ret�ngulo na tela
+		g.setColor(new Color(0, 135, 13)); // Metodo para preencher o backgroud com cor
+		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE); //metodo para exibir o backgroud na interface da tela.
 		
 		player.render(g);
 		world.render(g);
 		
-		bs.show(); //Exibe na interface o ret�ngulo
+		bs.show(); //Exibe o conteudo do jogo dentro da interface grafica
 	} 
 	//Metodo contrutor da interface grafica
 	
@@ -98,6 +99,9 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			player.down = true;
 		}
+		if(e.getKeyCode() == KeyEvent.VK_A){
+			player.shoot = true;
+		}
 	}
 
 	@Override
@@ -121,6 +125,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
+
 		
 	}
 
