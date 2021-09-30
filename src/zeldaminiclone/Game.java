@@ -16,7 +16,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	
 	public static int WIDTH = 640, HEIGHT = 480; //Tamanho da janela ao iniciar o jogo
 	public static int SCALE = 3; //Redimensiona a janela
-	public Player player; //Instancia a classe Player
+	public static Player player; //Instancia a classe Player
 	public List<Inimigo> inimigos = new ArrayList<Inimigo>();
 	public World world; // Instancia a Classe World
 	

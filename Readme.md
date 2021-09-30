@@ -40,3 +40,9 @@ Para mais info, ver comentários do código fonte.
 - Criado metodos de controle da classe inimigo para renderiza-lo.
 - Criado spritesheet do inimigo.
 - Atualzado classe Spritesheet.java.
+
+30/09/2021 1.g
+
+- Atualização da classe inimigo.java para acontecer a colisão com objetos do mapa.
+- Atualizado a classe inimigo para perseguir o player pelo mapa.
+- Criado evento de perseguição para o inimigo buscar o player;

@@ -23,6 +23,7 @@ public class World {
 		for(int yy = 0; yy < 15*2; yy++) {
 			blocos.add(new Blocks(640-32, yy*32)); //Renderiza Blocos da Direita
 		}
+		blocos.add(new Blocks(250,100));
 	}
 	// Metodo de Colisão
 	public static boolean isFree(int x, int y) {
@@ -34,7 +35,7 @@ public class World {
 		}
 		return true;
 	}
-			
+			 
 	public void render(Graphics g) {
 		for(int i = 0; i < blocos.size(); i++) {
 			blocos.get(i).render(g);
