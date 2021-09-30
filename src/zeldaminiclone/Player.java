@@ -1,6 +1,6 @@
 package zeldaminiclone;
 
-import java.awt.Color; //utilizado para colorir os blocos.
+//import java.awt.Color; /*utilizado para colorir os blocos.*/
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
